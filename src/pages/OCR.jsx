@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 function OCR() {
   const imageRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
-  // const [imageFile, setImageFile] = useState();
+  const [imageFile, setImageFile] = useState();
   const [result, setResult] = useState("");
 
   const handleFileChange = (event) => {
@@ -104,7 +104,7 @@ function OCR() {
           accept=".jpg,.jpeg,.png"
           onChange={handleFileChange}
         />
-        <img ref={imageRef} alt="image" height="400" />
+        <img src={imageFile} ref={imageRef} alt="image" height="400" />
       </div>
       {isLoading ? "Loading...." : null}
       {/* <button
